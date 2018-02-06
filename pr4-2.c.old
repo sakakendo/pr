@@ -30,8 +30,7 @@ int get_num2(int *a, int *b)
 	*(buf+strlen(buf))='\0';
 	char *tmp = (char*)malloc(strlen(buf)),*head;
 	head = tmp;
-#	while(*buf!=' ')		*tmp++=*buf++;
-	while(*buf!=',')		*tmp++=*buf++;
+	while(*buf!=' ')		*tmp++=*buf++;
 	*tmp='\0';
 	*a=str2int(head);
 	head=tmp;

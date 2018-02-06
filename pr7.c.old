@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <stdlib.h>>
+#include <string.h>>
 #define KEY_SIZE        8
 
 struct tree{
@@ -72,14 +72,14 @@ void search(struct tree *node,int num){
 		printf("[%d]->",node->no);
 		if(node->left ==NULL){
 			printf("%d not found",num);	
-			return;
+			exit(1);
 		}
 		search(node->left,num);
 	}else if(num<node->no){
 		printf("[%d]->",node->no);
 		if(node->right ==NULL){
 			printf("%d not found",num);	
-			return;
+			exit(1);
 		}
 		search(node->right,num);
 	}else{
@@ -106,18 +106,22 @@ int main(void) {
         }
         print_tree(root);
         
+        /* キー入力により実行が停止されるまで、探索キーの
+         * 入力と探索、結果の表示を繰り返す
+         */
         while(1){
         	printf("Do you wanna continue(yes/no)?");
         	scanf("%s",mode);
         	if(strcmp(mode,"yes")==0){
-			printf("key>");
-			scanf("%d",&num);
-//			num=get_num();
-			search(root,num);
-		}else{
-			printf("end");
-			exit(1);
+				printf("key>");
+				num=get_num();
+				search(root,num);
+			}else{
+				printf("end");
+				exit(1);
+			}
+	
 		}
-	}
+
         return 0;
 }

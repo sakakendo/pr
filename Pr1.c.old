@@ -2,12 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include<time.h>
-
-/**********************
-#compiler option
-gcc -std=c99 -o a.out;./a.out
-
-***********************/
+/* dev-c++コンパイラでは，上記の"<"や">"と"stdio.h"との間にスペースを入れると
+   コンパイル時に不具合が発生することがあるので，スペースは入れないように */
 
 #define LINEAR 0  /* 1:線形探索，0:二分探索 */
 #define NORMAL 0  /* 1:通常版，  0:番兵版   */
